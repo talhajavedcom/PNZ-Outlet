@@ -18,7 +18,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+// Check if captcha not solved 
     if (!captchaValue) {
       toast.error("Please complete the reCAPTCHA challenge.");
       return;
@@ -120,6 +120,7 @@ const Signup = () => {
                       <ReCAPTCHA
                         sitekey="6LegzgIpAAAAAOXIz6k4z8ZFPjs7Nh2-MJaZbbpd"
                         onChange={(captchaResult) =>
+                          //replace state(null) value with captcha result
                           setCaptchaValue(captchaResult)
                         }
                       />
